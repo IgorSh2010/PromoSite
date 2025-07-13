@@ -124,6 +124,7 @@ export default function Home() {
             >
               <MailIcon className="mr-2 w-5 h-5" /> Napisz na WhatsApp
             </a>
+            
             {/* Gmail */}
             <a
               href="mailto:igor.sh2010@gmail.com"
