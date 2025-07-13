@@ -69,7 +69,7 @@ export default function Home() {
         animate="show"
       >
         <motion.h1 className="text-5xl md:text-7xl font-bold mb-6" variants={item}>
-          Dewelopment stron internetowych na zamówienie
+          Tworzenie stron internetowych na zamówienie
         </motion.h1>
         <motion.p className="text-xl md:text-2xl max-w-2xl" variants={item}>
           Projektuję nowoczesne, responsywne i szybkie strony internetowe — od wizytówek po rozbudowane aplikacje.
@@ -124,7 +124,7 @@ export default function Home() {
             >
               <MailIcon className="mr-2 w-5 h-5" /> Napisz na WhatsApp
             </a>
-            
+
             {/* Gmail */}
             <a
               href="mailto:igor.sh2010@gmail.com"
