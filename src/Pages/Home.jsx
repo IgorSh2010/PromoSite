@@ -16,6 +16,18 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
+const buttonItem = {
+  hidden: { opacity: 0, y: 20 },
+  show: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.3,
+      duration: 0.5,
+    },
+  }),
+};
+
 export default function Home() {
   const firstCards = [
     {
@@ -115,23 +127,31 @@ export default function Home() {
           </motion.div>
         </div>        
         <motion.div
-          className="w-full max-w-md mx-auto flex flex-col md:flex-row justify-center items-center border border-gray-200 rounded-2xl p-4 gap-4"
+          className="w-full max-w-lg mx-auto flex flex-col md:flex-row justify-center items-center border border-gray-200 rounded-2xl p-4 gap-4"
           variants={item}
         >
           {/* WhatsApp */}
-          <a
+          <motion.a
+            custom={0}
+            initial="hidden"
+            animate="show"
+            variants={buttonItem}
             href="https://wa.me/48501578224"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full max-w-xs flex items-center justify-center bg-[#25d366] hover:bg-[#1ebd5a] text-white px-6 py-3 rounded-2xl text-lg font-bold transition-all"
+            className="w-full max-w-full flex items-center justify-center bg-[#25d366] hover:bg-gray-600 text-white hover:text-green-500 px-6 py-3 rounded-2xl text-lg font-bold transition-all"
           >
             <MessageCircle className="mr-2 w-8 h-8" /> Napisz na WhatsApp
-          </a>
+          </motion.a>
 
           {/* Gmail */}
-          <a
+          <motion.a
+            custom={1}
+            initial="hidden"
+            animate="show"
+            variants={buttonItem}
             href="mailto:igor.sh2010@gmail.com"
-            className="w-full max-w-xs shadow flex items-center justify-center bg-white text-gray-800 hover:bg-gray-200 hover:text-sky-500 px-6 py-3 rounded-xl text-lg font-medium transition-all border"
+            className="w-full max-w-full shadow flex items-center justify-center bg-white text-gray-800 hover:bg-gray-600 hover:text-sky-500 px-6 py-3 rounded-xl text-lg font-medium transition-all"
           >
             <svg
               className="w-6 h-6 mr-2"
@@ -148,7 +168,7 @@ export default function Home() {
               <path fill="#34A853" d="M24 31.3l6.3-4.8v11.2H24v-6.4z" />
             </svg>
             Wyślij e-mail
-          </a>
+          </motion.a>
         </motion.div>
         <motion.p className="mt-4 text-gray-300" variants={item}>
           &copy; {new Date().getFullYear()} Ihor Shepetko. Wszelkie prawa zastrzeżone.
