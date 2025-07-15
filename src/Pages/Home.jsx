@@ -114,52 +114,41 @@ export default function Home() {
             <ArrowDown className="absolute w-12 h-12 text-cyan-500" />
           </motion.div>
         </div>        
-        <motion.div className="inline-flex justify-center border border-gray-200 rounded-2xl p-4 gap-4" variants={item}>
-          <motion.div className="inline-flex items-center gap-4">
-            <a
-              href="https://wa.me/48501578224"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center bg-[#25d366] hover:bg-gray-600 text-green-900 hover:text-green-500 px-6 py-3 rounded-2xl text-lg font-bold transition-all"
-            >
-              <MailIcon className="mr-2 w-5 h-5" /> Napisz na WhatsApp
-            </a>
+        <motion.div
+          className="w-full max-w-md mx-auto flex flex-col md:flex-row justify-center items-center border border-gray-200 rounded-2xl p-4 gap-4"
+          variants={item}
+        >
+          {/* WhatsApp */}
+          <a
+            href="https://wa.me/48501578224"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full max-w-xs flex items-center justify-center bg-[#25d366] hover:bg-[#1ebd5a] text-white px-6 py-3 rounded-2xl text-lg font-bold transition-all"
+          >
+            <MailIcon className="mr-2 w-5 h-5" /> Napisz na WhatsApp
+          </a>
 
-            {/* Gmail */}
-            <a
-              href="mailto:igor.sh2010@gmail.com"
-              className="w-60 flex items-center justify-center bg-white text-gray-800 hover:bg-gray-600 hover:text-sky-500 px-6 py-3 rounded-xl text-lg font-medium transition-all border"
+          {/* Gmail */}
+          <a
+            href="mailto:igor.sh2010@gmail.com"
+            className="w-full max-w-xs shadow flex items-center justify-center bg-white text-gray-800 hover:bg-gray-200 hover:text-sky-500 px-6 py-3 rounded-xl text-lg font-medium transition-all border"
+          >
+            <svg
+              className="w-6 h-6 mr-2"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Іконка у стилі Google */}
-              <svg
-                className="w-6 h-6 mr-2"
-                viewBox="0 0 48 48"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill="#4285F4"
-                  d="M24 9.5l-1.6 1.2L9.5 20.1v17.6h8.2V26.5l6.3 4.8 6.3-4.8v11.2h8.2V20.1L25.6 10.7 24 9.5z"
-                />
-                <path
-                  fill="#EA4335"
-                  d="M38.5 20.1L24 9.5l14.5 10.6z"
-                />
-                <path
-                  fill="#34A853"
-                  d="M9.5 20.1L24 9.5 9.5 20.1z"
-                />
-                <path
-                  fill="#FBBC05"
-                  d="M24 31.3l-6.3-4.8v11.2H24v-6.4z"
-                />
-                <path
-                  fill="#34A853"
-                  d="M24 31.3l6.3-4.8v11.2H24v-6.4z"
-                />
-              </svg>
-              Wyślij e-mail
-            </a>
-          </motion.div>
+              <path
+                fill="#4285F4"
+                d="M24 9.5l-1.6 1.2L9.5 20.1v17.6h8.2V26.5l6.3 4.8 6.3-4.8v11.2h8.2V20.1L25.6 10.7 24 9.5z"
+              />
+              <path fill="#EA4335" d="M38.5 20.1L24 9.5l14.5 10.6z" />
+              <path fill="#34A853" d="M9.5 20.1L24 9.5 9.5 20.1z" />
+              <path fill="#FBBC05" d="M24 31.3l-6.3-4.8v11.2H24v-6.4z" />
+              <path fill="#34A853" d="M24 31.3l6.3-4.8v11.2H24v-6.4z" />
+            </svg>
+            Wyślij e-mail
+          </a>
         </motion.div>
         <motion.p className="mt-4 text-gray-300" variants={item}>
           &copy; {new Date().getFullYear()} Ihor Shepetko. Wszelkie prawa zastrzeżone.
