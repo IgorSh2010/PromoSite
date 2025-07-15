@@ -1,4 +1,4 @@
-import { RocketIcon, MailIcon, ArrowDown } from "lucide-react";
+import { RocketIcon, MailIcon, ArrowDown, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const container = {
@@ -125,7 +125,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="w-full max-w-xs flex items-center justify-center bg-[#25d366] hover:bg-[#1ebd5a] text-white px-6 py-3 rounded-2xl text-lg font-bold transition-all"
           >
-            <MailIcon className="mr-2 w-5 h-5" /> Napisz na WhatsApp
+            <MessageCircle className="mr-2 w-8 h-8" /> Napisz na WhatsApp
           </a>
 
           {/* Gmail */}
