@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import "./i18n";
 import Home from './Pages/Home';
 
 const Layout = () => {

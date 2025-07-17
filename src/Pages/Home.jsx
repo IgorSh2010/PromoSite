@@ -1,5 +1,7 @@
 import { RocketIcon, MailIcon, ArrowDown, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
+//import i18n from "../i18n";
+import { useTranslation } from "react-i18next";
 
 const container = {
   hidden: { opacity: 0 },
@@ -28,23 +30,27 @@ const buttonItem = {
   }),
 };
 
+
 export default function Home() {
+
+  const { t, i18n } = useTranslation();
+
   const firstCards = [
     {
-      title: "Indywidualne podejście bez kompromisów",
-      description: "Tworzę projekty szyte na miarę – w pełni dopasowane do strategii, wizji i celów Twojej marki. Tutaj liczy się każdy detal.",
+      title: t("card1title"),
+      description: t("card1desc"),
       color: "text-cyan-400",
       border: "hover:border-cyan-500",
     },
     {
-      title: "Design, który robi wrażenie",
-      description: "Nowoczesna estetyka, intuicyjność i szybkość działania — Twoja strona nie tylko przyciągnie uwagę, ale zostanie zapamiętana.",
+      title: t("card2title"),
+      description: t("card2desc"),
       color: "text-purple-400",
       border: "hover:border-purple-500",
     },
     {
-      title: "Kompleksowe wsparcie na każdym etapie",
-      description: "Od koncepcji po wdrożenie – jesteś w dobrych rękach. Oferuję pełne wsparcie techniczne nawet do 3 miesięcy po uruchomieniu strony.",
+      title: t("card3title"),
+      description: t("card3desc"),
       color: "text-pink-400",
       border: "hover:border-pink-500",
     },
@@ -52,20 +58,20 @@ export default function Home() {
 
   const secondCards = [
     {
-      title: "Doskonała na każdym ekranie",
-      description: "Twoja strona będzie perfekcyjnie wyglądać i działać na telefonach, tabletach oraz komputerach. Dostosowujemy projekt do każdego urządzenia – bo liczy się komfort Twoich klientów, niezależnie od miejsca i czasu.",
+      title: t("card4title"),
+      description: t("card4desc"),
       color: "text-sky-600",
       border: "hover:border-cyan-500",
     },
     {
-      title: "Hosting bez zmartwień",
-      description: "Oferujemy szybki, bezpieczny i stabilny hosting zoptymalizowany specjalnie pod Twoją stronę. Dzięki temu wszystko działa błyskawicznie i bezproblemowo. Masz własny serwer? Nie ma problemu — dostosujemy się do Twojego środowiska.",
+      title: t("card5title"),
+      description: t("card5desc"),
       color: "text-purple-700",
       border: "hover:border-purple-500",
     },
     {
-      title: "Własność i pełna kontrola",
-      description: "Po zakończeniu projektu strona w 100% należy do Ciebie. Na życzenie otrzymasz komplet plików źródłowych oraz gotową do instalacji kopię, wyposażoną w intuicyjny instalator. Dzięki temu z łatwością przeniesiesz stronę w przyszłości — jeśli zajdzie taka potrzeba.",
+      title: t("card6title"),
+      description: t("card6desc"),
       color: "text-red-600",
       border: "hover:border-red-500",
     },
@@ -73,6 +79,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-900 via-cyan-800 to-sky-200 text-white p-6">
+      <div className="absolute top-4 right-4 z-50 flex gap-2">
+        <button onClick={() => i18n.changeLanguage("pl")} className="px-3 py-1 border border-white rounded hover:bg-white hover:text-black transition">PL</button>
+        <button onClick={() => i18n.changeLanguage("en")} className="px-3 py-1 border border-white rounded hover:bg-white hover:text-black transition">EN</button>
+        <button onClick={() => i18n.changeLanguage("ua")} className="px-3 py-1 border border-white rounded hover:bg-white hover:text-black transition">UA</button>
+      </div>
       {/* Header */}
       <motion.header
         className="flex flex-col items-center justify-center text-center py-20"
@@ -81,10 +92,10 @@ export default function Home() {
         animate="show"
       >
         <motion.h1 className="text-5xl md:text-7xl font-bold mb-6" variants={item}>
-          Tworzenie stron internetowych na zamówienie
+          {t("headertitle")}
         </motion.h1>
         <motion.p className="text-xl md:text-2xl max-w-2xl" variants={item}>
-          Projektuję nowoczesne, responsywne i szybkie strony internetowe — od wizytówek po rozbudowane aplikacje.
+          {t("headersubtitle")}
         </motion.p>
       </motion.header>
 
@@ -116,10 +127,10 @@ export default function Home() {
         animate="show"
       >
         <motion.div className="text-3xl font-bold" variants={item}>
-          Zacznijmy od rozmowy
+          {t("footertitle")}
         </motion.div>
         <motion.div className="text-lg italic font-extralight mb-4" variants={item}>
-          (Darmowa wycena i konsultacja)
+          {t("footersubtitle")}
         </motion.div>         
         <div className="flex justify-center mb-6">       
           <motion.div className="relative w-12 h-12 bg-sky-950 animate-bounce rounded-full" variants={item}>
@@ -141,7 +152,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="w-full max-w-full flex items-center justify-center bg-[#25d366] hover:bg-gray-600 text-white hover:text-green-500 px-6 py-3 rounded-2xl text-lg font-bold transition-all"
           >
-            <MessageCircle className="mr-2 w-8 h-8" /> Napisz na WhatsApp
+            <MessageCircle className="mr-2 w-8 h-8" /> {t("buttonwhatsapp")}
           </motion.a>
 
           {/* Gmail */}
@@ -167,11 +178,11 @@ export default function Home() {
               <path fill="#FBBC05" d="M24 31.3l-6.3-4.8v11.2H24v-6.4z" />
               <path fill="#34A853" d="M24 31.3l6.3-4.8v11.2H24v-6.4z" />
             </svg>
-            Wyślij e-mail
+            {t("buttonemail")}
           </motion.a>
         </motion.div>
         <motion.p className="mt-4 text-gray-300" variants={item}>
-          &copy; {new Date().getFullYear()} Ihor Shepetko. Wszelkie prawa zastrzeżone.
+          &copy; {new Date().getFullYear()} Ihor Shepetko. {t("policies")}
         </motion.p>
       </motion.footer>
     </div>
