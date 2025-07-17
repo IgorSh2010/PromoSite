@@ -1,6 +1,5 @@
-import { RocketIcon, MailIcon, ArrowDown, MessageCircle } from "lucide-react";
+import { RocketIcon, ArrowDown, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-//import i18n from "../i18n";
 import { useTranslation } from "react-i18next";
 
 const container = {
