@@ -160,7 +160,7 @@ export default function Home() {
             initial="hidden"
             animate="show"
             variants={buttonItem}
-            href="mailto:igor.sh2010@gmail.com"
+            href="mailto:ownsite.react@gmail.com"
             className="w-full max-w-full shadow flex items-center justify-center bg-white text-gray-800 hover:bg-gray-600 hover:text-sky-500 px-6 py-3 rounded-xl text-lg font-medium transition-all"
           >
             <svg
