@@ -1,6 +1,16 @@
 import { RocketIcon, ArrowDown, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import Certificates from "../components/Certyficates";
+import reactCert from "../components/Certificates/react.png";
+import dotNetCert from "../components/Certificates/.net_found.png"; 
+import sqlDSCert from "../components/Certificates/SQL_DS.png";// Adjust the path as necessary
+
+const certificatesData = [
+  { title: "React Developer Certificate", image: reactCert },
+  { title: ".NET fullstack foundations certyficate", image: dotNetCert },
+  { title: "SQL for Data Science", image: sqlDSCert },
+];
 
 const container = {
   hidden: { opacity: 0 },
@@ -116,26 +126,24 @@ export default function Home() {
             <p>{card.description}</p>
           </motion.div>
         ))}
-      </motion.main>
+      </motion.main>     
 
-      {/* Footer */}
-      <motion.footer
-        className="mt-20 text-center"
-        variants={container}
-        initial="hidden"
-        animate="show"
+      <motion.div
+        className="w-full max-w-lg mx-auto flex flex-col items-center text-center p-4"
+        variants={item}
       >
-        <motion.div className="text-3xl font-bold" variants={item}>
-          {t("footertitle")}
+        <span className="text-3xl font-bold mb-2">{t("footertitle")}</span>
+        <span className="text-lg italic font-extralight mb-6">{t("footersubtitle")}</span>
+
+        <motion.div
+          className="relative w-12 h-12 bg-sky-950 animate-bounce rounded-full flex items-center justify-center"
+          variants={item}
+        >
+          <ArrowDown className="w-8 h-8 text-cyan-500" />
         </motion.div>
-        <motion.div className="text-lg italic font-extralight mb-4" variants={item}>
-          {t("footersubtitle")}
-        </motion.div>         
-        <div className="flex justify-center mb-6">       
-          <motion.div className="relative w-12 h-12 bg-sky-950 animate-bounce rounded-full" variants={item}>
-            <ArrowDown className="absolute w-12 h-12 text-cyan-500" />
-          </motion.div>
-        </div>        
+      </motion.div>
+  
+
         <motion.div
           className="w-full max-w-lg mx-auto flex flex-col md:flex-row justify-center items-center border border-gray-200 rounded-2xl p-4 gap-4"
           variants={item}
@@ -180,6 +188,18 @@ export default function Home() {
             {t("buttonemail")}
           </motion.a>
         </motion.div>
+
+      {/* Certificates section */}
+      <Certificates data={certificatesData} /> 
+
+      {/* Footer */}
+      <motion.footer
+        className="mt-20 text-center"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        
         <motion.p className="mt-4 text-gray-300" variants={item}>
           &copy; {new Date().getFullYear()} Ihor Shepetko. {t("policies")}
         </motion.p>
